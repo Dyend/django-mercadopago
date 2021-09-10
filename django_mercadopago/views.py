@@ -100,7 +100,7 @@ class PaymentSuccessView(CSRFExemptMixin, View):
         notification, created = _create_notification(
             reference,
             topic=Notification.TOPIC_PAYMENT,
-            resource_id=request.GET.get("collection_id"),
+            resource_id=request.GET.get("payment_id"),
         )
 
         return redirect(
